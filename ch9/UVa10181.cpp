@@ -67,11 +67,11 @@ bool DFS(int g, int h, int k) {
 int IDA_Star() {
   lim = h1();
   while (true) {
+    if (lim > MAX_MOVE_COUNT) // pruning condition in the problem
+      return -1;
     if (DFS(0, h1(), blank))
       return lim;
     lim += 2;
-    if (lim > MAX_MOVE_COUNT) // pruning condition in the problem
-      return -1;
   }
 }
 
